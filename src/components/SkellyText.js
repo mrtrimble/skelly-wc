@@ -39,16 +39,19 @@ export class SkellyText extends BaseElement {
           position: relative;
           transform: scaleX(1);
           transform-origin: center left;
-          transition: transform 0.25s ease-out;
           width: 100%;
           
-          @container skelly (min-width: 65ch){
+          @container skelly (min-width: 65ch) {
             &:nth-child(even) {
               transform: scaleX(96%);
             }
             &:last-of-type {
               transform: scaleX(50%);
             }
+          }
+
+          @media (prefers-reduced-motion: no-preference) {
+            transition: transform 0.25s ease-out;
           }
         }
     `,

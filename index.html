@@ -8,36 +8,63 @@
         href="/vite.svg" />
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
-        <meta name="color-scheme"
-              content="dark light">
+  <meta name="color-scheme"
+        content="dark light">
   <title>Vite App</title>
 
   <style>
-    .container {
-      width: min(calc(100% - 1rem), 65ch);
-      margin-inline: auto;
+    @layer demo {
+      html {
+        color-scheme: light dark;
+      }
+
+      body {
+        font-family: system-ui;
+      }
+
+      .container {
+        width: min(calc(100% - 1rem), 65ch);
+        margin-inline: auto;
+        margin-block: 1rem;
+
+        > * + * {
+          margin-block-start: 1.5rem;
+        }
+      }
     }
   </style>
 </head>
 
 <body>
+  <header class="container">
+    <h1>skelly-wc</h1>
+  </header>
   <main class="container">
-    <p>
-      <skelly-text line-count="7"></skelly-text>
-    </p>
-    <p>
-      <skelly-text line-count="3"
-                   line-color="tomato"></skelly-text>
-    </p>
-    <p>
-      <skelly-text line-count="4"
-                   line-color="dodgerblue"></skelly-text>
-    </p>
+    <article>
+      <section aria-labelledby="skelley-text">
+        <h2 id="skelly-text">skelly-text</h2>
+        <p>
+          <skelly-text line-count="7"></skelly-text>
+        </p>
+        <p>
+          <skelly-text line-count="3"
+                       line-color="tomato"></skelly-text>
+        </p>
+        <p>
+          <skelly-text line-count="4"
+                       line-color="dodgerblue"></skelly-text>
+        </p>
+      </section>
+    </article>
   </main>
-  <!-- <script type="module" src="main.js"></script> -->
-   <script type="module">
+  <footer class="container">
+    <a href="https://github.com/mrtrimble/skelly-wc">Check out source code!</a>
+  </footer>
+  <script type="module"
+          src="main.js"></script>
+  <!-- <script type="module">
       import {SkellyText} from './dist/skelly-wc.js';
-   </script>
+   </script> -->
 </body>
 
 </html>
