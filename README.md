@@ -5,8 +5,7 @@ A collection of custom elements to quickly build skeletons. This is based on the
   - [Installation](#installation)
   - [Components](#components)
     - [`skelly-text`](#skelly-text)
-      - [Import](#import)
-      - [Attributes](#attributes)
+  - [Examples](#examples)
   - [Development](#development)
 
 ## Installation
@@ -20,14 +19,20 @@ Install via CDN:
 ```html
 <script 
   type="module" 
-  src="https://cdn.jsdelivr.net/npm/@mrtrimble/skelly-wc@1.1.0/dist/skelly-wc.js"
-  >
+  src="https://cdn.jsdelivr.net/npm/@mrtrimble/skelly-wc/dist/skelly-wc.js"
+>
 </script>
 ```
 
 ## Components
 
 ### `skelly-text`
+
+Import component into your project.
+
+```js
+import { SkellyText } from '@mrtrimble/skelly-wc';
+```
 
 Add `<skelly-text></skelly-text>` to your HTML document wherever you need a skeleton.
 
@@ -36,16 +41,6 @@ Add `<skelly-text></skelly-text>` to your HTML document wherever you need a skel
   <skelly-text></skelly-text>
 </p>
 ```
-
-#### Import
-
-Import component into your project.
-
-```js
-import { SkellyText } from '@mrtrimble/skelly-wc';
-```
-
-#### Attributes
 
 `skelly-text` contains two attributes for customization.
 
@@ -57,6 +52,10 @@ import { SkellyText } from '@mrtrimble/skelly-wc';
   <skelly-text line-count="3" line-color="tomato"></skelly-text>
 </p>
 ```
+
+## Examples
+
+- [`skelly-text` demo on CodePen](https://codepen.io/mrtrimble/live/VwJXQZJ/4499796d2b5cb87dda1ed5bb2b1f392c)
 
 ## Development
 
