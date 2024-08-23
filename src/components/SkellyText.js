@@ -1,6 +1,12 @@
-export class SkellyText extends HTMLElement {
+import BaseElement from "./BaseElement";
+
+export class SkellyText extends BaseElement {
   static get observedAttributes() {
     return ['lineCount', 'lineColor'];
+  }
+
+  static {
+    this.register('skelly-text');
   }
 
   get lineColor() {
