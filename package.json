@@ -1,6 +1,5 @@
 {
   "name": "@mrtrimble/skelly-wc",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
   "description": "web component for skeletons",
@@ -12,7 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "vite": "^5.4.1"
