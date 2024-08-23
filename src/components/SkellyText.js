@@ -1,12 +1,12 @@
-import BaseElement from "./BaseElement";
+import BaseElement from './BaseElement';
 
 export class SkellyText extends BaseElement {
-  static get observedAttributes() {
-    return ['lineCount', 'lineColor'];
-  }
-
   static {
     this.register('skelly-text');
+  }
+
+  static get observedAttributes() {
+    return ['lineCount', 'lineColor'];
   }
 
   get lineColor() {

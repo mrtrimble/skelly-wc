@@ -8,6 +8,8 @@
         href="/vite.svg" />
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme"
+              content="dark light">
   <title>Vite App</title>
 
   <style>
@@ -32,9 +34,10 @@
                    line-color="dodgerblue"></skelly-text>
     </p>
   </main>
-  <script type="module">
-    import { SkellyText } from './lib/main.js'
-  </script>
+  <!-- <script type="module" src="main.js"></script> -->
+   <script type="module">
+      import {SkellyText} from './dist/skelly-wc.js';
+   </script>
 </body>
 
 </html>

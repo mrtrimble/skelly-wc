@@ -1,1 +1,1 @@
-import { SkellyText } from './src/components/SkellyText';
+import { SkellyText } from './components/SkellyText';
