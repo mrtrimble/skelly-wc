@@ -5,7 +5,7 @@
   "type": "module",
   "description": "web component for skeletons",
   "files": [
-    "lib",
+    "lib/main.js",
     "LICENSE"
   ],
   "scripts": {
