@@ -5,7 +5,8 @@
   "description": "web component for skeletons",
   "main": "dist/skelly-wc.js",
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "scripts": {
     "dev": "vite",
