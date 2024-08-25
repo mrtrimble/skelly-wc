@@ -6,23 +6,27 @@ export class SkellyImage extends BaseElement {
   }
 
   static get observedAttributes() {
-    return ['imageLabel', 'imageColor', 'height', 'width'];
+    return ['labelColor', 'imageColor', 'aspect-ratio', 'height', 'width'];
   }
 
-  get imageLabel() {
-    return this.getAttribute('image-label') || 'Placeholder Image';
+  get labelColor() {
+    return this.getAttribute('label-color');
   }
 
   get imageColor() {
-    return this.getAttribute('image-color') || '#CCCCCC';
+    return this.getAttribute('image-color');
   }
 
   get height() {
-    return Number(this.getAttribute('height')) || 100;
+    return this.getAttribute('height');
   }
 
   get width() {
-    return Number(this.getAttribute('width')) || 100;
+    return this.getAttribute('width');
+  }
+
+  get aspectRatio() {
+    return this.getAttribute('aspect-ratio');
   }
 
   createStyles() {
@@ -38,9 +42,10 @@ export class SkellyImage extends BaseElement {
             place-content: center;
             height: var(--skelly-image-height, auto);
             width: var(--skelly-image-width, auto);
-            aspect-ratio: 16/9;
+            aspect-ratio: var(--skelly-image-aspect-ratio, 16/9);
             overflow: clip;
-            background-color: var(--skelly-background-color, #CCC);
+            background-color: var(--skelly-image-color, #CCCCCC);
+            color: var(--skelly-label-color, #000000);
 
             * {
               box-sizing: border-box;
@@ -51,22 +56,43 @@ export class SkellyImage extends BaseElement {
     });
   }
 
-  createPlaceholderImage() {
+  addLabel() {
     return Object.assign(document.createElement('span'), {
-      innerText: this.imageLabel,
       id: 'skelly-image-label',
+      innerHTML: `<slot></slot>`,
     });
+  }
+
+  setImageColor() {
+    return this.style.setProperty('--skelly-image-color', this.imageColor);
+  }
+
+  setLabelColor() {
+    return this.style.setProperty('--skelly-label-color', this.labelColor);
+  }
+
+  setHeight() {
+    return this.style.setProperty('--skelly-image-height', this.height);
+  }
+  setWidth() {
+    return this.style.setProperty('--skelly-image-width', this.width);
+  }
+
+  setAspectRatio() {
+    return this.style.setProperty('--skelly-image-aspect-ratio', this.aspectRatio);
   }
 
   connectedCallback() {
     // Attach shadow DOM and add styles
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(this.createStyles());
-    this.attachInternals();
 
-    if (this.imageColor) console.log(this.imageColor);
-    if (this.imageLabel) console.log(this.imageLabel);
+    if (this.imageColor) this.setImageColor();
+    if (this.labelColor) this.setLabelColor();
+    if (this.height) this.setHeight();
+    if (this.width) this.setWidth();
+    if (this.aspectRatio) this.setAspectRatio();
 
-    this.shadowRoot.appendChild(this.createPlaceholderImage());
+    this.shadowRoot.appendChild(this.addLabel());
   }
 }
