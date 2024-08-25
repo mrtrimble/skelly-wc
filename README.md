@@ -102,6 +102,7 @@ Add `<skelly-text></skelly-text>` to your HTML document wherever you need a skel
 
 ## Examples
 
+- [`skelly-image` demo on CodePen](https://codepen.io/mrtrimble/live/ZEdodGm)
 - [`skelly-text` demo on CodePen](https://codepen.io/mrtrimble/live/VwJXQZJ/4499796d2b5cb87dda1ed5bb2b1f392c)
 
 ## Development
