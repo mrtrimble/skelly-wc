@@ -4,6 +4,7 @@ A collection of custom elements to quickly build skeletons. This is based on the
 - [skelly-wc](#skelly-wc)
   - [Installation](#installation)
   - [Components](#components)
+    - [`skelly-image`](#skelly-image)
     - [`skelly-text`](#skelly-text)
   - [Examples](#examples)
   - [Development](#development)
@@ -26,12 +27,58 @@ Install via CDN:
 
 ## Components
 
+### `skelly-image`
+Import component into your project.
+
+```js
+import { SkellyImage } from '@mrtrimble/skelly-wc/lib/components/SkellyImage';
+```
+
+Add `<skelly-image></skelly-image>` to your HTML document wherever you need a placeholder image.
+
+```html
+<figure>
+  <skelly-image></skelly-image>
+</figure>
+```
+
+Add a label by passing text into the default slot.
+
+```html
+<figure>
+  <skelly-image>
+    Placeholder Text
+  </skelly-image>
+</figure>
+```
+
+`skelly-image` contains five attributes for customization.
+
+- `aspect-ratio` - sets the aspect ratio of the placeholder image (default: `4/3`)
+- `height` - sets height of the placeholder image (default: `auto`)
+- `width` - sets width of the placholder image (default: `auto`)
+- `image-color` - sets the color of the line (default: `#CCCCCC`)
+- `label-color` - sets number of lines (default: `#000000`)
+
+```html
+<figure>
+  <skelly-image
+    height="300px"
+    width="300px"
+    aspect-ratio="1"
+    image-color="blue"
+    label-color="orange">
+    Placeholder Text
+  </skelly-image>
+</figure>
+```
+
 ### `skelly-text`
 
 Import component into your project.
 
 ```js
-import { SkellyText } from '@mrtrimble/skelly-wc';
+import { SkellyText } from '@mrtrimble/skelly-wc/lib/components/SkellyText';
 ```
 
 Add `<skelly-text></skelly-text>` to your HTML document wherever you need a skeleton.
