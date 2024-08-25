@@ -3,14 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon"
-        type="image/svg+xml"
-        href="/vite.svg" />
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme"
         content="dark light">
-  <title>Vite App</title>
+  <title>Skelly</title>
 
   <style>
     @layer demo {
@@ -27,7 +24,7 @@
         margin-inline: auto;
         margin-block: 1rem;
 
-        > * + * {
+        >*+* {
           margin-block-start: 1.5rem;
         }
       }
@@ -41,7 +38,7 @@
   </header>
   <main class="container">
     <article>
-      <section aria-labelledby="skelley-text">
+      <section aria-labelledby="skelly-text">
         <h2 id="skelly-text">skelly-text</h2>
         <p>
           <skelly-text line-count="7"></skelly-text>
@@ -55,16 +52,23 @@
                        line-color="dodgerblue"></skelly-text>
         </p>
       </section>
+      <section aria-labelledby="skelly-image">
+        <h2 id="skelly-image">skelly-image</h2>
+
+        <skelly-image width="300px"
+                      aspect-ratio="1"
+                      image-color="blue"
+                      label-color="red">
+          Placeholder Image
+        </skelly-image>
+      </section>
     </article>
   </main>
   <footer class="container">
     <a href="https://github.com/mrtrimble/skelly-wc">Check out source code!</a>
   </footer>
   <script type="module"
-          src="main.js"></script>
-  <!-- <script type="module">
-      import {SkellyText} from './dist/skelly-wc.js';
-   </script> -->
+          src="./lib/index.js"></script>
 </body>
 
 </html>
